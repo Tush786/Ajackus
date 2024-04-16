@@ -3,51 +3,70 @@ import {
   Card,
   CardBody,
   CardHeader,
+  FormControl,
+  FormLabel,
   Heading,
+  Input,
   Stack,
   StackDivider,
   Text,
+  useDisclosure,
   useToast,
 } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { MdEditSquare, MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
+import { Button, Modal } from "flowbite-react";
 
 import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
-import { RemoveUser, getUser } from "../Redux/action";
+import { RemoveUser, editUser, getUser } from "../Redux/action";
 import axios from "axios";
-import { REMOVE_USER } from "../Redux/actiontype";
+
 
 function UserCard(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id, name, username, email } = props;
   const toast = useToast();
-  const Userdata = useSelector((state) => state.user.UserData);
+  const [openModal, setOpenModal] = useState(false);
 
-  // function deleteTask(id) {
-  //   dispatch(RemoveUser(id));
-  // }
+  const [userform, setUserform] = useState({
+    name: "",
+    username: "",
+    email: "",
+  });
 
+  function handleChange(e) {
+    const { name, value } = e.target;
 
-  const deleteTask = async (id) => {
-    try {
-     const resp= await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
-      
-     dispatch({
-      type:REMOVE_USER,
-      payload:resp.data
-     }).then(()=>{
+    setUserform((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  }
+
+  function deleteTask(id) {
+    dispatch(RemoveUser(id)).then(() => {
       dispatch(getUser());
-     })
+    });
+  }
 
-      // toast.success("Data deleted successfully!");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  function handleSubmit(e) {
+    e.preventDefault()
+    dispatch(editUser(id,userform)).then(()=>{
+      dispatch(getUser())
+    })
+  }
 
-  function editTask() {}
+  function editTask(id) {
+    setOpenModal(true);
+    const obj = {
+      name,
+      username,
+      email,
+    };
+    setUserform(obj);
+  }
 
   return (
     <div
@@ -62,7 +81,68 @@ function UserCard(props) {
           <Box className="flex justify-center items-center">
             <MdEditSquare onClick={editTask} />
 
-            <MdDelete onClick={deleteTask} />
+            <>
+              <Modal show={openModal} onClose={() => setOpenModal(false)}>
+                <Modal.Header></Modal.Header>
+                <Modal.Body>
+                  <form onSubmit={handleSubmit}>
+                    <FormControl className="py-2">
+                      <FormLabel className="text-[16px] font-[600] py-2">
+                        FirstName
+                      </FormLabel>
+                      <Input
+                        className="bg-[#f8f7f7] w-full p-2"
+                        onChange={handleChange}
+                        name="name"
+                        type="text"
+                        placeholder="Enter Name"
+                        value={userform.name}
+                        autoFocus
+                      />
+                    </FormControl>
+
+                    <FormControl className="py-2">
+                      <FormLabel className="text-[16px] font-[600] py-2">
+                        LastName
+                      </FormLabel>
+                      <Input
+                        className="bg-[#f8f7f7] w-full p-2"
+                        onChange={handleChange}
+                        autoFocus
+                        name="username"
+                        type="text"
+                        placeholder="Enter Username"
+                        value={userform.username}
+                      />
+                    </FormControl>
+
+                    <FormControl className="py-2 mb-2">
+                      <FormLabel className="text-[16px] font-[600] py-2">
+                        Email
+                      </FormLabel>
+                      <Input
+                        className="bg-[#f8f7f7] w-full p-2"
+                        autoFocus
+                        onChange={handleChange}
+                        type="email"
+                        name="email"
+                        placeholder="Enter Email"
+                        value={userform.email}
+                      />
+                    </FormControl>
+
+                    <Input
+                      className="bg-[#ec8181] w-full p-2 text-[#fff] rounded-sm py-2"
+                      mt={4}
+                      colorScheme="teal"
+                      type="submit"
+                    />
+                  </form>
+                </Modal.Body>
+              </Modal>
+            </>
+
+            <MdDelete onClick={() => deleteTask(id)} />
           </Box>
         </CardHeader>
 

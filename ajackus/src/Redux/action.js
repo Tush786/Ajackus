@@ -17,55 +17,58 @@ export const getUser = () => async (dispatch) => {
 
 
   export const RemoveUser = (id) => async (dispatch) => {
+    console.log(id)
     try {
       const response = await axios.delete(
         `https://jsonplaceholder.typicode.com/users/${id}`
       );
-     console.log(response.data)
-      dispatch({
-        type: REMOVE_USER,
-        payload: response.data,
-      });
+     console.log("Del",response)
+      // dispatch({
+      //   type: REMOVE_USER,
+      //   payload: response.data,
+      // });
     } catch (error) {
       console.error("Error editing task:", error);
       // Handle error if necessary
     }
   };
 
-  export const editUser= (userId, userdata) => async (dispatch) => {
+  export const editUser= (userId, userdata) => async () => {
+    console.log(userdata)
+    console.log(userId)
     try {
       // Send PATCH request to update the task
       const response = await axios.patch(
         `https://jsonplaceholder.typicode.com/users/${userId}`,
-        userdata
+        {...userdata}
       );
-     console.log(response.data)
-      dispatch({
-        type: EDIT_USER,
-        payload: response.data,
-      });
+     console.log(response)
+    //   dispatch({
+    //     type: EDIT_USER,
+    //     payload: response.data,
+    //   });
     } catch (error) {
       console.error("Error editing task:", error);
       // Handle error if necessary
     }
   };
   
-  export const Addtask= (userdata) => async (dispatch) => {
-    try {
-      // Send PATCH request to update the task
-      const response = await axios.post(
-        `https://jsonplaceholder.typicode.com/users/`,
-        userdata
-      );
-     console.log(response.data)
-      dispatch({
-        type: ADD_USER,
-        payload: response.status,
-      });
-    } catch (error) {
-      console.error("Error editing task:", error);
-      // Handle error if necessary
-    }
-  };
+  // export const Adduser= (userdata) => async (dispatch) => {
+  //   try {
+  //     // Send PATCH request to update the task
+  //     const response = await axios.post(
+  //       `https://jsonplaceholder.typicode.com/users/`,
+  //       userdata
+  //     );
+  //    console.log(response.data)
+  //     dispatch({
+  //       type: ADD_USER,
+  //       payload: response.status,
+  //     });
+  //   } catch (error) {
+  //     console.error("Error editing task:", error);
+  //     // Handle error if necessary
+  //   }
+  // };
 
  

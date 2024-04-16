@@ -15,7 +15,7 @@ export default function Users() {
   return (
     <>
     <div className="w-[100%] grid grid-cols-2 gap-4 ">
-      {userdata.map((user, index) => (
+      {userdata?.map((user, index) => (
         <UserCard key={index} {...user} />
       ))}
     </div>
