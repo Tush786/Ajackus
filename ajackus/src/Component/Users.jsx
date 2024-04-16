@@ -5,7 +5,7 @@ import UserCard from './UserCard'
 
 
 export default function Users() {
-    const userdata=useSelector(state=>state.user.userData)
+    const userdata=useSelector((state)=>state.user.userData)
     console.log(userdata)
     const dispatch=useDispatch()
 
@@ -14,9 +14,9 @@ export default function Users() {
     },[])
   return (
     <>
-    <div className="w-[65%] m-auto grid grid-cols-3 gap-4">
-      {userdata?.map((task, index) => (
-        <UserCard key={index} {...task} />
+    <div className="w-[100%] grid grid-cols-2 gap-4 ">
+      {userdata.map((user, index) => (
+        <UserCard key={index} {...user} />
       ))}
     </div>
 
