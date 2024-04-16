@@ -103,9 +103,8 @@ Following are the major dependencies of the project:
 ## Frontend pages
 
 <pre>
-- /login            Login page
-- /          All product
-- /profile         Profile Page
+- /login                 Login page
+- /User-Dashboard        User Data            
 </pre>
 
 ## npm scripts
