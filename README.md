@@ -112,8 +112,6 @@ Following are the major dependencies of the project:
 At root:
 
 - `npm run start`: Starts frontend
-- `npm run server`: Starts only backend
-- `nodemon index.js`: Starts local server of backend
 - `npm run install-all`: Installs all dependencies and dev-dependencies required at root, at frontend and at backend.
 
 Inside frontend folder:
@@ -127,7 +125,6 @@ Inside frontend folder:
 
   - Reactjs docs: https://reactjs.org/docs/getting-started.html
   - npmjs docs: https://docs.npmjs.com/
-  - Mongodb docs: https://docs.mongodb.com/manual/introduction/
   - Github docs: https://docs.github.com/en/get-started/quickstart/hello-world
 
 - Download links
