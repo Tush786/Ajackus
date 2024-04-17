@@ -10,9 +10,6 @@
 <h1>Form Validation</h1>
 <a href="https://ibb.co/mbxV19S"><img src="https://i.ibb.co/Nt4dQ97/SC-6.png" alt="SC-6" border="0"></a>
 
-<h1>Signup Page</h1>
-<a href="https://ibb.co/WFhHGsX"><img src="https://i.ibb.co/RPFgY7K/Signup.png" alt="Signup" border="0"></a>
-
 <h1>Login Page</h1>
 <a href="https://ibb.co/fSYqGMk"><img src="https://i.ibb.co/YW7PT2c/DS-1.png" alt="DS-1" border="0"></a>
 
