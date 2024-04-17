@@ -40,7 +40,7 @@ export default function Users() {
       <div className="mt-5 mb-5 flex items-center justify-center">
         <Button onClick={handlePrev} disabled={page === 1}  >Prev</Button>
         <span className="font-bold mx-1 px-4">{page}</span>
-        <Button onClick={handlenext} disabled={userdata.length <= page*pageSize} >Next</Button>
+        <Button className='' onClick={handlenext} disabled={userdata.length <= page*pageSize} >Next</Button>
       </div>
     </>
   );
