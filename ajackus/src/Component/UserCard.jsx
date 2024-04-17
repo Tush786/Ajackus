@@ -100,7 +100,7 @@ function UserCard(props) {
 
             <>
               <Modal show={openModal} onClose={() => setOpenModal(false)}>
-                <Modal.Header></Modal.Header>
+                <Modal.Header>Update User Info</Modal.Header>
                 <Modal.Body>
                   <form onSubmit={handleSubmit}>
                     <FormControl className="py-2">

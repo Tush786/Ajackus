@@ -8,7 +8,7 @@ import { FcServices } from "react-icons/fc";
 
 export const SidebarData = [
   {
-    title: "Home",
+    title: "Ajackus",
     path: "/",
     icon: <FaHome />,
     cName: "nav-text"

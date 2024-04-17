@@ -48,6 +48,8 @@ function UserForm() {
     } catch (error) {
       console.log(error);
     }
+
+    alert("User has been Updated successfully")
   };
 
   return (
