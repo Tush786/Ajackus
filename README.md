@@ -1,22 +1,29 @@
 # Ajackus
 
-A MERN application for basic tasks management.
-<h1>Home Page</h1>
-<a href="https://ibb.co/yqn1dns"><img src="https://i.ibb.co/cQcHkcT/Home.png" alt="Home" border="0"></a>
-
-<h1>Profile Page</h1>
-<a href="https://ibb.co/RPcYh58"><img src="https://i.ibb.co/Mp7Z8Xd/Profile.png" alt="Profile" border="0"></a>
-
-<h1>Signup Page</h1>
-<a href="https://ibb.co/WFhHGsX"><img src="https://i.ibb.co/RPFgY7K/Signup.png" alt="Signup" border="0"></a>
-
-<h1>Product Page</h1>
-<a href="https://ibb.co/VTq27qL"><img src="https://i.ibb.co/qprktrD/Product.png" alt="Product" border="0"></a>
-
 <h1>Login Username and Password</h1>
 
 <h3> UserName : eve.holt@reqres.in</h3>
 <h3> Password : cityslicka</h3>
+
+<h1>User Dashboard</h1>
+<a href="https://ibb.co/HBxNtt5"><img src="https://i.ibb.co/5GnYrrb/DS-2.png" alt="DS-2" border="0"></a>
+<h1>User Dashboard Mobile View</h1>
+<a href="https://ibb.co/RgwgDMf"><img src="https://i.ibb.co/wdmdzbV/SC-3.png" alt="SC-3" border="0"></a>
+<a href="https://ibb.co/947cZmy"><img src="https://i.ibb.co/4SHK1w4/SC-4.png" alt="SC-4" border="0"></a>
+<a href="https://ibb.co/vH8jGTy"><img src="https://i.ibb.co/CzFHZYC/SC-5.png" alt="SC-5" border="0"></a>
+
+<h1>Form Validation</h1>
+<a href="https://ibb.co/mbxV19S"><img src="https://i.ibb.co/Nt4dQ97/SC-6.png" alt="SC-6" border="0"></a>
+
+<h1>Login Page</h1>
+<a href="https://ibb.co/fSYqGMk"><img src="https://i.ibb.co/YW7PT2c/DS-1.png" alt="DS-1" border="0"></a>
+
+<h1>Login Page Mobile View</h1>
+<a href="https://ibb.co/FxdSYJf"><img src="https://i.ibb.co/1v4DXKp/SC-1.png" alt="SC-1" border="0"></a>
+<a href="https://ibb.co/M95VPH5"><img src="https://i.ibb.co/8X45Pw4/SC-2.png" alt="SC-2" border="0"></a>
+
+
+
 
 ## Table of Contents
 
