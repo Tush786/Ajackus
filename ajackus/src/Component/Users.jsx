@@ -9,6 +9,8 @@ export default function Users() {
     console.log(userdata)
     const dispatch=useDispatch()
 
+    
+
     useEffect(()=>{
         dispatch(getUser())
     },[])

@@ -21,6 +21,7 @@ import { Button, Modal } from "flowbite-react";
 import { useNavigate } from "react-router-dom"; // Import useHistory from react-router-dom
 import { RemoveUser, editUser, getUser } from "../Redux/action";
 import axios from "axios";
+import { EDIT_USER, REMOVE_USER } from "../Redux/actiontype";
 
 
 function UserCard(props) {
@@ -29,8 +30,10 @@ function UserCard(props) {
   const { id, name, username, email } = props;
   const toast = useToast();
   const [openModal, setOpenModal] = useState(false);
+  const userData=useSelector((state)=>state.user.userData)
 
   const [userform, setUserform] = useState({
+    id:"",
     name: "",
     username: "",
     email: "",
@@ -46,21 +49,35 @@ function UserCard(props) {
   }
 
   function deleteTask(id) {
-    dispatch(RemoveUser(id)).then(() => {
-      dispatch(getUser());
-    });
+    dispatch(RemoveUser(id))
+
+
+    const updatedUsers = userData.filter((ele)=> ele.id !== id);
+        dispatch({
+          type:REMOVE_USER,
+          payload:updatedUsers
+        })
+        alert("User has been deleted successfully")
   }
 
   function handleSubmit(e) {
     e.preventDefault()
-    dispatch(editUser(id,userform)).then(()=>{
-      dispatch(getUser())
+    dispatch(editUser(id,userform))
+
+
+    const updatedUsers = userData.map((ele)=> ele.id === id? userform : ele);
+    dispatch({
+      type:EDIT_USER,
+      payload:updatedUsers
     })
+    alert("User has been Updated successfully")
+    setOpenModal(false);
   }
 
-  function editTask(id) {
+  function editTask() {
     setOpenModal(true);
     const obj = {
+      id,
       name,
       username,
       email,
@@ -98,12 +115,13 @@ function UserCard(props) {
                         placeholder="Enter Name"
                         value={userform.name}
                         autoFocus
+                        required={true}
                       />
                     </FormControl>
 
                     <FormControl className="py-2">
                       <FormLabel className="text-[16px] font-[600] py-2">
-                        LastName
+                     UserName
                       </FormLabel>
                       <Input
                         className="bg-[#f8f7f7] w-full p-2"
@@ -113,6 +131,7 @@ function UserCard(props) {
                         type="text"
                         placeholder="Enter Username"
                         value={userform.username}
+                        required={true}
                       />
                     </FormControl>
 
@@ -128,6 +147,7 @@ function UserCard(props) {
                         name="email"
                         placeholder="Enter Email"
                         value={userform.email}
+                        required={true}
                       />
                     </FormControl>
 

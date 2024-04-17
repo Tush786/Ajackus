@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ADD_USER, EDIT_USER, GET_USER, REMOVE_USER } from "./actiontype";
+import { ADD_USER, EDIT_USER, ERROR, GET_USER, REMOVE_USER } from "./actiontype";
 
 export const getUser = () => async (dispatch) => {
     try {
@@ -11,6 +11,10 @@ export const getUser = () => async (dispatch) => {
       });
     } catch (err) {
       console.log(err);
+      dispatch({
+        type:ERROR,
+        payload:err.response.status
+      })
     }
   };
 

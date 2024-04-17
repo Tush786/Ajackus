@@ -1,16 +1,24 @@
 import React from 'react'
-import {  Route, Routes } from "react-router-dom";
+import {  Navigate, Route, Routes } from "react-router-dom";
 import Users from '../Component/Users';
 import Usermain from '../Component/UserMain';
 import Login from '../Component/Login';
 import PrivateRoute from './Privateroute';
+import { useSelector } from 'react-redux';
+import Errorpage from '../Component/Errorpage';
 
 export default function Allroutes() {
+  const errcode=useSelector((state)=>state.user.errorcode);
+  console.log(errcode)
   return (
     <div>
         <Routes>
-          <Route exact path="/" />
-          {/* <Route path="/User-Dashboard" element={<Usermain/>} /> */}
+        <Route path="/" element={<Navigate to="/login" />} />
+          {/* {
+            errcode==="404"?<Route path="/error" element={<Errorpage/>} />: <Route path="/User-Dashboard" element={<Usermain/>} /> 
+          }
+       */}
+          
           <Route path="/Reports" />
           <Route path="/login" element={<Login/>}/>
           <Route

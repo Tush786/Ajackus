@@ -1,10 +1,11 @@
-import { ADD_USER, EDITING, EDIT_TASK, EDIT_USER, GET_USER, REMOVE_USER } from "./actiontype";
+import { ADD_USER, EDITING, EDIT_TASK, EDIT_USER, ERROR, GET_USER, REMOVE_USER } from "./actiontype";
 
   
   const initialState = {
     userData: [],
     editformid:"",
     editing:false,
+    errorcode:""
   };
   
   export const Reducer = (state = initialState, { type, payload }) => {
@@ -22,6 +23,8 @@ import { ADD_USER, EDITING, EDIT_TASK, EDIT_USER, GET_USER, REMOVE_USER } from "
              return {...state,editing:true, editformid:payload.id}
             case REMOVE_USER:
              return {...state, userData: payload}
+            case ERROR:
+             return {...state, errorcode: payload}
       default:
         return state;
     }

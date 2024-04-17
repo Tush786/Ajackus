@@ -73,6 +73,7 @@ function UserForm() {
             placeholder="Enter FirstName"
             value={userform.firstName}
             autoFocus
+            required={true}
           />
         </FormControl>
 
@@ -88,6 +89,7 @@ function UserForm() {
             type="text"
             placeholder="Enter LastName"
             value={userform.lastName}
+            required={true}
           />
         </FormControl>
 
@@ -101,6 +103,7 @@ function UserForm() {
             name="email"
             placeholder="Enter Email"
             value={userform.email}
+            required={true}
           />
         </FormControl>
 
@@ -116,6 +119,7 @@ function UserForm() {
             name="department"
             placeholder="Enter Department"
             value={userform.department}
+            required={true}
           />
         </FormControl>
 

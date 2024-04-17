@@ -3,18 +3,19 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
-import { useToast } from "@chakra-ui/react";
+ 
+import { ToastContainer, toast } from "react-toastify";
 
 function Login() {
   const Navigate = useNavigate();
+  const notify = () => toast("Wow so easy!");
  
 
   const dispatch = useDispatch();
   const status = useSelector((state) => state.user.status);
   const token = useSelector((state) => state.user.token);
   console.log(token);
-  const toast = useToast();
+
 
   const [user, setUser] = useState({
     email: "",
@@ -31,24 +32,13 @@ function Login() {
     const { email, password } = user;
 
     if (!email.includes("@") && !email.includes(".com")) {
-      toast({
-        title: "Enter valid email",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-      return;
+     toast.error("Correct all Input field")
+     return  
     }
 
     if (password === "" || password.length < 6) {
-      toast({
-        title: "Enter valid password",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-
-      return;
+      toast.error("Correct all Input field")
+     return  
     }
 
     try {
@@ -65,7 +55,7 @@ function Login() {
       password: "",
     });
   };
-  const Token=localStorage.getItem("Toke")
+  const Token=localStorage.getItem("Token")
   if(Token){
     if(Token){
         return <Navigate to={"/User-Dashboard"}/>
@@ -94,6 +84,7 @@ function Login() {
             name="email"
             placeholder="Email Address"
             onChange={(e) => handleChange(e)}
+            required={true}
           />
           <input
             className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4"
@@ -101,6 +92,7 @@ function Login() {
             placeholder="Password"
             name="password"
             onChange={(e) => handleChange(e)}
+            required={true}
           />
           <input
             className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4 bg-[#8898ee] text-white"
@@ -120,20 +112,7 @@ function Login() {
           </a>
         </div>
 
-        <div
-          onClick={() => {
-            Navigate("/signup");
-          }}
-          className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left"
-        >
-          Don't have an account?{" "}
-          <a
-            className="text-red-600 hover:underline hover:underline-offset-4"
-            href="#"
-          >
-            Register
-          </a>
-        </div>
+    
       </div>
     </section>
   );
