@@ -1,8 +1,11 @@
 # Ajackus
 
-A MERN application for basic tasks management.
-<h1>Home Page</h1>
-<a href="https://ibb.co/yqn1dns"><img src="https://i.ibb.co/cQcHkcT/Home.png" alt="Home" border="0"></a>
+<h1>User Dashboard</h1>
+<a href="https://ibb.co/HBxNtt5"><img src="https://i.ibb.co/5GnYrrb/DS-2.png" alt="DS-2" border="0"></a>
+<h1>User Dashboard Mobile View</h1>
+<a href="https://ibb.co/RgwgDMf"><img src="https://i.ibb.co/wdmdzbV/SC-3.png" alt="SC-3" border="0"></a>
+<a href="https://ibb.co/947cZmy"><img src="https://i.ibb.co/4SHK1w4/SC-4.png" alt="SC-4" border="0"></a>
+<a href="https://ibb.co/vH8jGTy"><img src="https://i.ibb.co/CzFHZYC/SC-5.png" alt="SC-5" border="0"></a>
 
 <h1>Profile Page</h1>
 <a href="https://ibb.co/RPcYh58"><img src="https://i.ibb.co/Mp7Z8Xd/Profile.png" alt="Profile" border="0"></a>
