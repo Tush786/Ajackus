@@ -1,5 +1,10 @@
 # Ajackus
 
+<h1>Login Username and Password</h1>
+
+<h3> UserName : eve.holt@reqres.in</h3>
+<h3> Password : cityslicka</h3>
+
 <h1>User Dashboard</h1>
 <a href="https://ibb.co/HBxNtt5"><img src="https://i.ibb.co/5GnYrrb/DS-2.png" alt="DS-2" border="0"></a>
 <h1>User Dashboard Mobile View</h1>
@@ -18,10 +23,7 @@
 <a href="https://ibb.co/M95VPH5"><img src="https://i.ibb.co/8X45Pw4/SC-2.png" alt="SC-2" border="0"></a>
 
 
-<h1>Login Username and Password</h1>
 
-<h3> UserName : eve.holt@reqres.in</h3>
-<h3> Password : cityslicka</h3>
 
 ## Table of Contents
 
