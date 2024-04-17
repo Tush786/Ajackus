@@ -5,8 +5,8 @@ import Users from './Users'
 
 function Usermain() {
   return (
-    <div className='flex gap-4 w-[60%] m-auto mt-4 '>
-      <div>
+    <div className='sm:flex sm:gap-4 sm:w-[60%] m-auto  mt-4 w-[100%] '>
+      <div className='mb-4'>
         <UserForm/>
       </div>
       <div>

@@ -52,7 +52,7 @@ function UserForm() {
 
   return (
     <div
-      className="w-[500px] border-dashed p-4"
+      className="sm:w-[500px] border-dashed p-4 w-[100%]"
       style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px" }}
     >
     <Text className="text-center text-[20px] font-[600]">Add User</Text>

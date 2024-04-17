@@ -14,11 +14,9 @@ export default function Allroutes() {
     <div>
         <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
-          {/* {
-            errcode==="404"?<Route path="/error" element={<Errorpage/>} />: <Route path="/User-Dashboard" element={<Usermain/>} /> 
-          }
-       */}
-          
+        {/* <Route path="/User-Dashboard" element={<Navigate to="/login" />} /> */}
+
+                
           <Route path="/Reports" />
           <Route path="/login" element={<Login/>}/>
           <Route

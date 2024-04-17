@@ -87,7 +87,7 @@ function UserCard(props) {
 
   return (
     <div
-      className="w-[300px] border-black p-4"
+      className="sm:w-[300px] border-black p-4 w-[100%]"
       style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px" }}
     >
       <Card className="text-left ">

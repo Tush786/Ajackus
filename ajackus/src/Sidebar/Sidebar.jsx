@@ -8,16 +8,17 @@ import { SidebarData } from "./Sidebardata";
 
 import "./Sidebar.css";
 import Profile from "../Component/Profile";
+import { Hide } from "@chakra-ui/react";
 
 function SideBarS() {
   const [sidebar, setSidebar] = useState(true); //false likhana true ki jagah if you want to show hamburger
-  const showSidebar = () => setSidebar(sidebar); //! add karna hai
+  const showSidebar = () => setSidebar(!sidebar); //! add karna hai
 
   return (
     <>
       <IconContext.Provider value={{ color: "red" }}>
         <div className="navbar sticky top-0 z-40">
-          <Link to="#" className="menu-bars" onClick={showSidebar}>
+          <Link to="#" className="menu-bars " onClick={showSidebar}>
             <FaBars />
           </Link>
 
@@ -25,7 +26,7 @@ function SideBarS() {
             <ul className="nav-menu-items" onClick={showSidebar}>
               <li className="navbar-toggle">
                 <Link to="#" className="menu-bars">
-                  {/* <FaTimes /> */}
+                <FaTimes className="ml-7" />
                 </Link>
               </li>
 
